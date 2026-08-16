@@ -1,0 +1,9 @@
+{
+  "name": "Editor Raj",
+  "short_name": "Editor Raj",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07070b",
+  "theme_color": "#07070b",
+  "icons": []
+}

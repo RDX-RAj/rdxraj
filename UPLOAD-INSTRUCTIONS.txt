@@ -1,0 +1,12 @@
+UPLOAD INSTRUCTIONS
+
+1. Replace your existing index.html with the new index.html.
+2. Upload instagram.css in the same root folder where style.css is located.
+3. Do not delete style.css, script.js, config.js or existing images.
+4. The Instagram section uses these existing images:
+   - 1762319150601.jpg
+   - IMG_20260323_213556.jpg
+5. Open the website and hard refresh once.
+
+Instagram profile:
+https://www.instagram.com/rdx_raaaj

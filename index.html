@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07070b">
+  <meta name="description" content="Editor Raj — lofi, slowed + reverb, DJ remix and cinematic music edits.">
+  <meta name="keywords" content="Editor Raj, lofi, slowed reverb, haryanvi lofi, rajasthani lofi, DJ remix">
+  <meta property="og:title" content="Editor Raj — Music Creator">
+  <meta property="og:description" content="Lofi edits, latest videos, popular releases and midnight vibes.">
+  <meta property="og:image" content="1762319150601.jpg">
+  <meta property="og:type" content="website">
+  <title>Editor Raj — Ultimate Music Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="instagram.css">
+  <link rel="manifest" href="manifest.json">
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="loader"><div class="loader-ring"></div><p>LOADING THE VIBE</p></div>
+  <div class="noise"></div><canvas id="particles"></canvas>
+  <div class="aurora a1"></div><div class="aurora a2"></div>
+
+  <header class="topbar" id="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home"><span></span>EDITOR RAJ</a>
+      <nav id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#latest">Latest</a>
+        <a href="#popular">Popular</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#about">About</a>
+        <a href="#links">Links</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeBtn" class="round" aria-label="Theme"><i class="fa-solid fa-moon"></i></button>
+        <button id="menuBtn" class="round menu" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> LOFI EDITOR • MUSIC CREATOR</div>
+          <h1>Feel the music.<br><em>Live the vibe.</em></h1>
+          <p>Slowed + reverb, DJ remixes, cinematic moods and late-night melodies curated by Editor Raj.</p>
+          <div class="hero-actions">
+            <a class="btn primary" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ?sub_confirmation=1"><i class="fa-brands fa-youtube"></i> Subscribe</a>
+            <a class="btn glass" href="#latest"><i class="fa-solid fa-play"></i> Explore music</a>
+            <button class="btn glass" id="shareBtn"><i class="fa-solid fa-share-nodes"></i> Share</button>
+          </div>
+          <div class="quick-socials">
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/rdx_raaaj" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a target="_blank" rel="noopener" href="https://open.spotify.com/user/DjRAj06" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a target="_blank" rel="noopener" href="https://soundcloud.com/DjRAj06" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+            <a target="_blank" rel="noopener" href="https://github.com/RDX-RAj" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="player-wrap reveal delay1">
+          <div class="neon-orbit"></div>
+          <article class="player-card">
+            <div class="cover-wrap">
+              <img src="IMG_20260323_213556.jpg" alt="Editor Raj">
+              <div class="vinyl"></div>
+            </div>
+            <div class="track-row">
+              <div><small>NOW PLAYING</small><h3>Midnight Lofi Vibes</h3><p>Editor Raj</p></div>
+              <button id="heroPlay" class="play"><i class="fa-solid fa-play"></i></button>
+            </div>
+            <div id="wave" class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <audio id="audio" preload="metadata"></audio>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-wrap">
+      <div class="container stats reveal">
+        <article><strong id="videoCount">341+</strong><span>Videos</span></article>
+        <article><strong id="subscriberCount">70K+</strong><span>Subscribers</span></article>
+        <article><strong id="viewCount">Millions+</strong><span>Total views</span></article>
+        <article><strong>4+</strong><span>Creative channels</span></article>
+      </div>
+      <p class="data-note container" id="dataStatus">Live YouTube data will appear when the secure proxy is connected.</p>
+    </section>
+
+    <section class="section controls-section" id="latest">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="kicker">DISCOVER</span><h2>Latest uploads</h2></div>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ/videos">All videos <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="toolbar reveal">
+          <label class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="videoSearch" type="search" placeholder="Search videos..."></label>
+          <div class="filters" id="filters">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="haryanvi">Haryanvi</button>
+            <button data-filter="rajasthani">Rajasthani</button>
+            <button data-filter="bollywood">Bollywood</button>
+            <button data-filter="dj">DJ Remix</button>
+          </div>
+        </div>
+        <div id="latestGrid" class="video-grid"></div>
+        <div id="latestSkeleton" class="skeleton-grid"><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section class="section popular-section" id="popular">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="kicker">MOST LOVED</span><h2>Most popular</h2></div>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ/playlists">Playlists <i class="fa-solid fa-list-music"></i></a>
+        </div>
+        <div id="popularGrid" class="video-grid"></div>
+      </div>
+    </section>
+
+    <section class="section instagram-section" id="instagram">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">FOLLOW THE CREATOR</span>
+            <h2>Instagram profile</h2>
+          </div>
+          <a target="_blank" rel="noopener" href="https://www.instagram.com/rdx_raaaj">
+            Open Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="instagram-profile-card reveal">
+          <div class="instagram-glow instagram-glow-one"></div>
+          <div class="instagram-glow instagram-glow-two"></div>
+
+          <div class="instagram-profile-main">
+            <div class="instagram-avatar-ring">
+              <img src="1762319150601.jpg" alt="Raj Suratpura Instagram profile photo">
+            </div>
+
+            <div class="instagram-profile-info">
+              <div class="instagram-name-row">
+                <div>
+                  <span class="instagram-label"><i class="fa-brands fa-instagram"></i> INSTAGRAM</span>
+                  <h3>@rdx_raaaj</h3>
+                </div>
+                <span class="instagram-badge"><i class="fa-solid fa-check"></i></span>
+              </div>
+
+              <p class="instagram-real-name">Raj Suratpura • Editor Raj</p>
+              <p class="instagram-bio">
+                Music Editor • Digital Creator<br>
+                Lofi, slowed + reverb, DJ remixes and cinematic edits.
+              </p>
+
+              <div class="instagram-stats">
+                <div><strong>Creator</strong><span>Profile</span></div>
+                <div><strong>Music</strong><span>Edits</span></div>
+                <div><strong>Daily</strong><span>Updates</span></div>
+              </div>
+
+              <div class="instagram-actions">
+                <a class="instagram-follow-btn" target="_blank" rel="noopener" href="https://www.instagram.com/rdx_raaaj">
+                  <i class="fa-brands fa-instagram"></i> View Profile
+                </a>
+                <a class="instagram-message-btn" target="_blank" rel="noopener" href="https://www.instagram.com/rdx_raaaj">
+                  <i class="fa-regular fa-paper-plane"></i> Message
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="instagram-preview">
+            <div class="instagram-preview-top">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Latest vibes on Instagram</span>
+            </div>
+            <div class="instagram-preview-grid">
+              <div class="instagram-preview-item"><img src="1762319150601.jpg" alt=""></div>
+              <div class="instagram-preview-item"><img src="IMG_20260323_213556.jpg" alt=""></div>
+              <div class="instagram-preview-item instagram-preview-brand">
+                <i class="fa-brands fa-instagram"></i>
+                <strong>Follow</strong>
+                <span>@rdx_raaaj</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-photo reveal">
+          <img src="1762319150601.jpg" alt="Editor Raj">
+          <div class="headphone-note"><i class="fa-solid fa-headphones"></i><div><b>Best experienced</b><span>with headphones</span></div></div>
+        </div>
+        <div class="about-copy reveal delay1">
+          <span class="kicker">ABOUT THE CREATOR</span>
+          <h2>Music feels better<br>when it tells a story.</h2>
+          <p>I’m Raj Suratpura, a music editor and digital creator focused on lofi, slowed + reverb, DJ remixes and emotionally rich visual experiences.</p>
+          <div class="chips"><span>Slowed + Reverb</span><span>Lofi Edits</span><span>DJ Remix</span><span>Cinematic Visuals</span></div>
+          <div class="about-buttons">
+            <a class="btn primary" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ"><i class="fa-brands fa-youtube"></i> Main Channel</a>
+            <a class="btn glass" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ/playlists"><i class="fa-solid fa-list"></i> Playlists</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="links">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="kicker">ALL PLATFORMS</span><h2>Find me everywhere</h2></div></div>
+        <div class="link-group reveal">
+          <h3>YouTube Channels</h3>
+          <div class="link-grid">
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ"><i class="fa-brands fa-youtube"></i><div><b>Editor Raj</b><span>Main channel</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCmjalb9wNxTd29h_z9VMEXw"><i class="fa-brands fa-youtube"></i><div><b>Raj Edits</b><span>YouTube channel</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCswr44I1vcA58G1g25dxlcg"><i class="fa-brands fa-youtube"></i><div><b>DJ RDX Raj</b><span>DJ remix channel</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCyGMwi7wiGbSHrqMyE2cY1w"><i class="fa-brands fa-youtube"></i><div><b>DJ Chetram</b><span>YouTube channel</span></div><strong>↗</strong></a>
+          </div>
+        </div>
+        <div class="link-group reveal">
+          <h3>Social & Music</h3>
+          <div class="link-grid">
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.instagram.com/rdx_raaaj"><i class="fa-brands fa-instagram"></i><div><b>Instagram</b><span>@rdx_raaaj</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.facebook.com/share/1HMrNnkH1b/"><i class="fa-brands fa-facebook"></i><div><b>Facebook</b><span>Raj Suratpura</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://x.com/raj_suratpura29"><i class="fa-brands fa-x-twitter"></i><div><b>X / Twitter</b><span>@raj_suratpura29</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.snapchat.com/add/nobitaxd1"><i class="fa-brands fa-snapchat"></i><div><b>Snapchat</b><span>@nobitaxd1</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.pinterest.com/editor_raj29"><i class="fa-brands fa-pinterest"></i><div><b>Pinterest</b><span>@editor_raj29</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://open.spotify.com/user/DjRAj06"><i class="fa-brands fa-spotify"></i><div><b>Spotify</b><span>DJ Raj</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://soundcloud.com/DjRAj06"><i class="fa-brands fa-soundcloud"></i><div><b>SoundCloud</b><span>DJ Raj mixes</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://github.com/RDX-RAj"><i class="fa-brands fa-github"></i><div><b>GitHub</b><span>RDX-RAj</span></div><strong>↗</strong></a>
+            <a class="link-card" target="_blank" rel="noopener" href="https://www.linkedin.com/in/rj29rdx"><i class="fa-brands fa-linkedin"></i><div><b>LinkedIn</b><span>Professional profile</span></div><strong>↗</strong></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-card reveal">
+        <div><span class="kicker">JOIN THE COMMUNITY</span><h2>New music. New mood.<br>Every single week.</h2></div>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ?sub_confirmation=1"><i class="fa-brands fa-youtube"></i> Subscribe now</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="mini-player" id="miniPlayer">
+    <img src="IMG_20260323_213556.jpg" alt="">
+    <div class="mini-meta"><b>Midnight Lofi Vibes</b><span>Editor Raj</span></div>
+    <div class="progress"><span id="progress"></span></div>
+    <button id="miniPlay"><i class="fa-solid fa-play"></i></button>
+  </div>
+
+  <nav class="mobile-nav">
+    <a href="#home"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="#latest"><i class="fa-solid fa-clock"></i><span>Latest</span></a>
+    <a href="#instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+    <a href="#links"><i class="fa-solid fa-link"></i><span>Links</span></a>
+  </nav>
+
+  <footer><div class="container footer"><a class="brand" href="#home"><span></span>EDITOR RAJ</a><p>© <span id="year"></span> Editor Raj. Made with music & midnight vibes.</p><button id="topBtn" class="round"><i class="fa-solid fa-arrow-up"></i></button></div></footer>
+  <div id="toast"></div>
+</body>
+</html>
