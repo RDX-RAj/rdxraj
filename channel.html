@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#ffffff">
-  <title>EDITOR RAJ — Live Channel</title>
+  <title>EDITOR RAJ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,110 +13,146 @@
   <script defer src="channel.js"></script>
 </head>
 <body>
-  <main class="channel-shell">
-    <header class="mobile-topbar">
-      <button class="icon-btn" type="button" onclick="history.back()" aria-label="Back">←</button>
-      <div class="topbar-actions">
-        <a class="icon-btn" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ" target="_blank" rel="noopener" aria-label="Open YouTube">▶</a>
-        <button class="icon-btn" id="refreshBtn" type="button" aria-label="Refresh">↻</button>
+  <div class="app">
+    <header class="yt-top" id="ytTop">
+      <button class="icon-btn" type="button" onclick="history.back()" aria-label="Back">
+        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2z"/></svg>
+      </button>
+      <strong class="sticky-title" id="stickyTitle">EDITOR RAJ</strong>
+      <div class="top-actions">
+        <a class="icon-btn" id="searchLink" target="_blank" rel="noopener" aria-label="Search">
+          <svg viewBox="0 0 24 24"><path d="M9.5 3a6.5 6.5 0 1 0 3.99 11.63L19.86 21 21 19.86l-6.37-6.37A6.5 6.5 0 0 0 9.5 3zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9z"/></svg>
+        </a>
+        <button class="icon-btn" id="moreBtn" type="button" aria-label="More">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+        </button>
       </div>
     </header>
 
-    <section class="subscribe-banner">
-      <div class="subscribe-title">SUBSCRIBE NOW !</div>
-      <div class="goal-row">
-        <div class="goal-track"><div class="goal-fill" id="goalFill"></div><strong id="goalCurrent">—</strong></div>
-        <span class="goal-target">100K</span>
-      </div>
-    </section>
+    <div class="more-menu" id="moreMenu">
+      <button id="refreshBtn">Refresh live data</button>
+      <a id="openChannel" target="_blank" rel="noopener">Open on YouTube</a>
+    </div>
 
-    <section class="profile-block">
-      <div class="profile-row">
-        <img class="avatar" id="channelAvatar" src="1762319150601.jpg" alt="Editor Raj">
-        <div class="profile-copy">
-          <h1 id="channelTitle">EDITOR RAJ</h1>
-          <a class="handle" id="channelHandle" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ" target="_blank" rel="noopener">@theeditorraj</a>
-          <div class="channel-stats"><strong id="subscriberCount">—</strong> subscribers · <span id="videoCount">—</span> videos</div>
+    <section class="channel-hero" id="channelHero">
+      <div class="subscribe-card">
+        <div class="subscribe-label">SUBSCRIBE NOW !</div>
+        <div class="goal-row">
+          <div class="goal-track">
+            <div class="goal-fill" id="goalFill"></div>
+            <span id="goalCurrent">—</span>
+          </div>
+          <span class="goal-target">100K</span>
         </div>
       </div>
 
-      <p class="channel-bio" id="channelBio">Loading channel details…</p>
-      <p class="channel-links">↗ rdx-raj.github.io/theeditorraj and 1 more link</p>
-
-      <div class="owner-actions">
-        <a class="action-btn" href="https://studio.youtube.com" target="_blank" rel="noopener">▣ Analytics</a>
-        <a class="action-btn" href="https://studio.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ/editing" target="_blank" rel="noopener">✎ Edit Channel</a>
+      <div class="identity-row">
+        <img id="avatar" class="avatar" src="1762319150601.jpg" alt="EDITOR RAJ">
+        <div class="identity">
+          <h1 id="channelTitle">EDITOR RAJ</h1>
+          <a id="channelHandle" target="_blank" rel="noopener">@theeditorraj</a>
+          <div class="channel-stats"><span id="subscriberCount">—</span> subscribers <b>•</b> <span id="videoCount">—</span> videos</div>
+        </div>
       </div>
-      <a class="community-btn" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ/community" target="_blank" rel="noopener">♧ Community</a>
+
+      <button class="bio-line" id="bioBtn" type="button">
+        <span id="channelBio">HELLO FRIENDS 👋</span> <strong>...more</strong>
+      </button>
+
+      <a class="links-row" href="https://rdx-raj.github.io/theeditorraj" target="_blank" rel="noopener">
+        <span class="chain">↗</span>
+        <span>rdx-raj.github.io/theeditorraj and 1 more link</span>
+      </a>
+
+      <div class="channel-actions">
+        <a class="pill" id="subscribeBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 22a2.6 2.6 0 0 0 2.45-1.75h-4.9A2.6 2.6 0 0 0 12 22zm7-6v-5a7 7 0 0 0-5-6.71V3a2 2 0 1 0-4 0v1.29A7 7 0 0 0 5 11v5l-2 2v1h18v-1l-2-2z"/></svg>
+          <span>Subscribed</span>
+          <span class="down">⌄</span>
+        </a>
+        <a class="pill" id="communityBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 13c-3.33 0-6 1.67-6 4v2h12v-2c0-2.33-2.67-4-6-4zm8 0c-.64 0-1.25.06-1.82.17 1.1.95 1.82 2.24 1.82 3.83v2h6v-2c0-2.33-2.67-4-6-4z"/></svg>
+          <span>Community</span>
+        </a>
+      </div>
     </section>
 
-    <nav class="channel-tabs" aria-label="Channel sections">
-      <button class="tab active" data-tab="home">Home</button>
-      <button class="tab" data-tab="videos">Videos</button>
-      <button class="tab" data-tab="shorts">Shorts</button>
-      <button class="tab" data-tab="live">Live</button>
-      <button class="tab" data-tab="posts">Posts</button>
+    <nav class="channel-tabs" id="channelTabs">
+      <button class="channel-tab active" data-tab="home">Home</button>
+      <button class="channel-tab" data-tab="videos">Videos</button>
+      <button class="channel-tab" data-tab="shorts">Shorts</button>
+      <button class="channel-tab" data-tab="live">Live</button>
+      <button class="channel-tab" data-tab="podcasts">Podcasts</button>
+      <button class="channel-tab" data-tab="posts">Posts</button>
     </nav>
 
-    <div class="status-line" id="statusLine">Connecting live YouTube data…</div>
-
-    <section class="tab-panel active" id="panel-home">
-      <section class="content-section">
-        <h2>Popular videos</h2>
-        <div class="video-list" id="popularList"></div>
+    <main class="content">
+      <section class="tab-panel active" id="tab-home">
+        <div id="homeShelves"></div>
       </section>
 
-      <section class="content-section">
-        <h2>Latest uploads</h2>
-        <div class="video-list" id="latestHomeList"></div>
-      </section>
-
-      <section class="content-section" id="pastLiveHomeSection">
-        <h2>Past live streams</h2>
-        <div class="video-list" id="pastLiveHomeList"></div>
-      </section>
-    </section>
-
-    <section class="tab-panel" id="panel-videos">
-      <section class="content-section">
-        <h2>Videos</h2>
+      <section class="tab-panel" id="tab-videos">
+        <div class="sort-row">
+          <button class="sort-btn active" data-sort="latest">Latest</button>
+          <button class="sort-btn" data-sort="popular">Popular</button>
+          <button class="sort-btn" data-sort="oldest">Oldest</button>
+        </div>
         <div class="video-list" id="videosList"></div>
       </section>
-    </section>
 
-    <section class="tab-panel" id="panel-shorts">
-      <section class="content-section">
-        <h2>Shorts</h2>
-        <div class="shorts-grid" id="shortsList"></div>
-        <a class="youtube-open" href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ/shorts" target="_blank" rel="noopener">Open all Shorts on YouTube ↗</a>
+      <section class="tab-panel" id="tab-shorts">
+        <div class="shorts-grid" id="shortsGrid"></div>
       </section>
-    </section>
 
-    <section class="tab-panel" id="panel-live">
-      <section class="content-section">
-        <h2>Live now / Upcoming</h2>
-        <div class="video-list" id="liveList"></div>
+      <section class="tab-panel" id="tab-live">
+        <section class="shelf">
+          <h2>Live now / Upcoming</h2>
+          <div class="video-list" id="liveList"></div>
+        </section>
+        <section class="shelf">
+          <h2>Past live streams</h2>
+          <div class="video-list" id="pastLiveList"></div>
+        </section>
       </section>
-      <section class="content-section">
-        <h2>Past live streams</h2>
-        <div class="video-list" id="pastLiveList"></div>
-      </section>
-    </section>
 
-    <section class="tab-panel" id="panel-posts">
-      <section class="content-section">
-        <h2>Posts</h2>
-        <div class="posts-note">
-          <strong>Community posts open live on YouTube</strong>
-          <p>YouTube's official Data API does not provide Community Posts, so this page does not show fake/static posts.</p>
-          <a href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ/community" target="_blank" rel="noopener">View live Posts ↗</a>
-        </div>
+      <section class="tab-panel" id="tab-podcasts">
+        <div id="podcastsList"></div>
       </section>
-    </section>
 
-    <footer class="page-footer">
-      <span id="lastUpdated">Last updated: —</span>
-    </footer>
-  </main>
+      <section class="tab-panel" id="tab-posts">
+        <div class="posts-list" id="postsList"></div>
+      </section>
+    </main>
+
+    <div class="status" id="status">Connecting live YouTube data…</div>
+
+    <nav class="bottom-nav">
+      <a href="https://m.youtube.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3V10.5z"/></svg><span>Home</span>
+      </a>
+      <a href="https://m.youtube.com/shorts/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="m8.5 3 8 4.6-4 2.3 4 2.3-8 4.6V12l4-2.3-4-2.3V3zm0 10.2-4 2.3 8 4.5 4-2.3-8-4.5z"/></svg><span>Shorts</span>
+      </a>
+      <a class="create" href="https://m.youtube.com/upload" target="_blank" rel="noopener" aria-label="Create">
+        <span class="plus">+</span>
+      </a>
+      <a href="https://m.youtube.com/feed/subscriptions" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M7 4h10v2H7V4zm-3 4h16v12H4V8zm2 2v8h12v-8H6zm5 1.5 4 2.5-4 2.5v-5z"/></svg><span>Subscriptions</span>
+      </a>
+      <a id="youNav" target="_blank" rel="noopener">
+        <img class="bottom-avatar" id="bottomAvatar" src="1762319150601.jpg" alt="">
+        <span>You</span>
+      </a>
+    </nav>
+
+    <div class="bio-modal" id="bioModal">
+      <div class="bio-card">
+        <button class="bio-close" id="bioClose">×</button>
+        <h3 id="bioModalTitle">EDITOR RAJ</h3>
+        <p id="bioModalText"></p>
+        <a id="bioChannelLink" target="_blank" rel="noopener">View channel on YouTube ↗</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
